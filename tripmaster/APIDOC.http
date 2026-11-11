@@ -1,0 +1,63 @@
+
+# API CALL FOR USER REGISTRATION
+###
+POST http://127.0.0.1:8000/register/
+Content-Type: application/json
+
+{
+    "username":"jibu",
+    "email":"jibu@gmail.com",
+    "password":"jibu@123"
+}
+
+# API CALL FOR LISTING ALL USERS
+###
+GET http://127.0.0.1:8000/users/
+Accept: application/json
+
+# API CALL FOR DELETING A USER AND ASSOCIATED TRIPS
+###
+DELETE http://127.0.0.1:8000/user_delete/
+Accept: application/json
+Authorization: Basic anas:anas@2005
+
+# API CALL FOR LISTING TRIPS CREATED BY A SPECIFIC USER
+###
+GET  http://127.0.0.1:8000/trips/
+Accept:  application/json
+Authorization: Basic jibu:jibu@123
+
+# API CALL FOR ADDING TRIPS
+###
+POST http://127.0.0.1:8000/trips/
+Content-Type: application/json
+Authorization: Basic jibu:jibu@123
+
+{
+    "title":"Trip to Paris",
+    "start_date":"2027-2-12",
+    "destination":"Paris"
+}
+
+# API CALL FOR USER AUTHENTICATION
+###
+GET http://127.0.0.1:8000/trips/2/
+Accept: application/json
+Authorization: Basic jibu:jibu@123
+
+# API CALL FOR UPDATING TRIP DETAILS
+###
+PUT http://127.0.0.1:8000/trips/4/
+Content-Type: application/json
+Authorization: Basic jibu:jibu@123
+
+{
+    "title": "Trip to Mysore",
+    "start_date": "2027-1-15",
+    "destination": "Mysore"
+}
+
+# API CALL FOR DELETING TRIP DETAILS
+###
+DELETE http://127.0.0.1:8000/trips/3/
+Authorization: Basic jibu:jibu@123
